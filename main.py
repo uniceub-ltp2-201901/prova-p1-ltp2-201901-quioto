@@ -1,3 +1,5 @@
+# Aluno: João Pedro Barbosa de Olivira
+# RA:21803567
 # Importando bibliotecas
 from flask import Flask, request, render_template
 from flaskext.mysql import MySQL
@@ -52,17 +54,15 @@ def login():
 
             cursor = mysql.get_db().cursor()
 
-            return render_template('consulta.html', nome=titulacao, consulta=exibir_professores(cursor, nome=listar_professores))
+            return render_template('consulta.html', nome=titulacao, detalhe=listar_professores(cursor))
 
-    else:
-        return render_template('index.html', erro='Método incorreto. Use POST!')
+
+
+
+
+
+
 
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
-
-
-
