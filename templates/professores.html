@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bem vindo</title>
+</head>
+<body>
+    <h1>Bem vindo {{nome}}</h1>
+
+    <table border="1">
+
+        {% for item in professores %}
+            <tr>
+                <td><a href="/detalhar/{{item[0]}}">{{item[0]}}</a></td>
+                <td>{{item[1]}}</td>
+                <td>{{item[2]}}</td>
+
+            </tr>
+        {% endfor %}
+
+    </table>
+
+<h1>Sistema de busca</h1>
+<form action="/consulta" method="post">
+    Busque: <input type="text" name="login"><br>
+    <input type="submit" value="buscar">
+</form>
+</body>
+</html>
+
+</body>
+</html>
